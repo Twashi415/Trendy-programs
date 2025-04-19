@@ -1,6 +1,12 @@
 class DynamicProgramming:
     @staticmethod
     def fibonacci(n):
+        """
+        Calculate nth Fibonacci number using dynamic programming.
+
+        Time Complexity: O(n)
+        Space Complexity: O(1)
+        """
         if not isinstance(n, int) or n < 0:
             raise ValueError("Input must be a non-negative integer")
         if n <= 1:
@@ -12,6 +18,12 @@ class DynamicProgramming:
 
     @staticmethod
     def knapsack(values, weights, capacity):
+        """
+        Solve the 0/1 Knapsack problem.
+
+        Time Complexity: O(n * capacity)
+        Space Complexity: O(n * capacity)
+        """
         if len(values) != len(weights):
             raise ValueError("Values and weights must be of the same length")
 
@@ -29,6 +41,12 @@ class DynamicProgramming:
 
     @staticmethod
     def longest_common_subsequence(str1, str2):
+        """
+        Find length of the Longest Common Subsequence (LCS).
+
+        Time Complexity: O(m * n)
+        Space Complexity: O(m * n)
+        """
         m, n = len(str1), len(str2)
         dp = [[0] * (n + 1) for _ in range(m + 1)]
 
@@ -43,6 +61,12 @@ class DynamicProgramming:
 
     @staticmethod
     def matrix_chain_multiplication(p):
+        """
+        Compute minimum scalar multiplications for matrix chain.
+
+        Time Complexity: O(n^3)
+        Space Complexity: O(n^2)
+        """
         if len(p) < 2:
             raise ValueError("Invalid dimensions array")
 
@@ -61,6 +85,12 @@ class DynamicProgramming:
 
     @staticmethod
     def coin_change(coins, amount):
+        """
+        Find minimum number of coins to make amount.
+
+        Time Complexity: O(amount * len(coins))
+        Space Complexity: O(amount)
+        """
         dp = [float('inf')] * (amount + 1)
         dp[0] = 0
 
